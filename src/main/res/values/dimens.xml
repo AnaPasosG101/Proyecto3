@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_view_margin_bottom">10dp</dimen>
+    <dimen name="card_view_corner_radius">5dp</dimen>
+    <dimen name="card_view_lateral_padding">30dp</dimen>
+    <dimen name="card_view_top_bottom_padding">10dp</dimen>
+    <dimen name="image_pet_height">200dp</dimen>
+    <dimen name="text_name_pet_size">20sp</dimen>
+    <dimen name="text_name_pet_lateral_margin">10dp</dimen>
+    <dimen name="text_likes_pet_size">20sp</dimen>
+    <dimen name="likes_pet_lateral_margin">10dp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
+    <dimen name="title_text_size">30sp</dimen>
+    <dimen name="title_margin_top">10dp</dimen>
+    <dimen name="title_margin_left">30dp</dimen>
+    <dimen name="dimen_foto_grid">100dp</dimen>
+    <dimen name="linear_layout_card_view_grid_lateral_padding">10dp</dimen>
+</resources>
