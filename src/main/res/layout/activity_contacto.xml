@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dbraga.proyecto3.activities.ContactoActivity">
+
+    <include
+        android:id="@+id/miActionBar"
+        layout="@layout/toolbar">
+
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/miActionBar"
+        android:weightSum="5">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.2"
+        android:gravity="center"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/email_petition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email_petition"
+            />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
+        >
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/msg_petition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="@string/introduce_tu_mensaje"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+     <FrameLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_weight="2.2"
+         android:layout_gravity="bottom">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enviarComentarioButton"
+            android:text="@string/enviar_comentario"
+            android:layout_gravity="bottom"
+
+            style="@style/miBotonRaised"
+            />
+     </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
