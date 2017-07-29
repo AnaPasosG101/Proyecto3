@@ -20,12 +20,17 @@
             android:layout_weight="2"
            >
 
-        <ImageView
+        <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/imageViewPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/perrodeagua" />
+            app:civ_border_color="@color/accent"
+            app:civ_border_width="4dp"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="10"
+            app:civ_shadow_color="@color/primary"
+            android:src="@drawable/perrodeagua" />
         </FrameLayout>
 
         <FrameLayout
