@@ -1,5 +1,6 @@
 package com.example.dbraga.proyecto3.pojo;
 
+import android.database.Cursor;
 import android.os.Parcelable;
 
 /**
@@ -7,6 +8,8 @@ import android.os.Parcelable;
  */
 
 public class Mascota  {
+
+    private int id;
     private String name;
     private int numeroLikes;
     private int imageRef;
@@ -14,10 +17,20 @@ public class Mascota  {
     public Mascota() {
     }
 
-    public Mascota(String name, int numeroLikes, int imageRef) {
+    public Mascota(int id, String name, int numeroLikes, int imageRef) {
+        this.id=id;
         this.name = name;
         this.numeroLikes = numeroLikes;
         this.imageRef = imageRef;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

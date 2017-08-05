@@ -1,4 +1,4 @@
-package com.example.dbraga.proyecto3.activities;
+package com.example.dbraga.proyecto3.views.activities;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -6,30 +6,23 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 import com.example.dbraga.proyecto3.R;
 import com.example.dbraga.proyecto3.adapters.MascotasPagerAdapter;
-import com.example.dbraga.proyecto3.fragments.PerfilFragment;
-import com.example.dbraga.proyecto3.fragments.RecyclerViewFragment;
-import com.example.dbraga.proyecto3.listeners.OnMascotaIsRatedListener;
-import com.example.dbraga.proyecto3.listeners.OnMascotasRequiredListener;
-import com.example.dbraga.proyecto3.pojo.Mascota;
+import com.example.dbraga.proyecto3.views.fragments.PerfilFragment;
+import com.example.dbraga.proyecto3.views.fragments.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnMascotasRequiredListener, OnMascotaIsRatedListener {
-
-    private List<Mascota> mascotas;
+public class MainActivity extends AppCompatActivity {
+   // private List<Mascota> mascotas;
 
     private Toolbar toolbar;
-    private ImageButton favoritosButton;
+   // private ImageButton favoritosButton;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private RecyclerViewFragment recyclerViewFragment;
@@ -55,11 +48,11 @@ public class MainActivity extends AppCompatActivity implements OnMascotasRequire
 
         setSupportActionBar(toolbar);
 
-        mascotas=new ArrayList<>();
+        //mascotas=new ArrayList<>();
 
-        setMascotasData();
+        //setMascotasData();
 
-        setFavorites();
+        //setFavorites();
 
         setUpViewPager();
 
@@ -93,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements OnMascotasRequire
         return super.onOptionsItemSelected(item);
     }
 
-    private void setFavorites() {
+    /*private void setFavorites() {
         favoritosButton = (ImageButton) findViewById(R.id.toolbarFavoritesButton);
         favoritosButton.setVisibility(View.VISIBLE);
         favoritosButton.setOnClickListener(new View.OnClickListener() {
@@ -144,16 +137,16 @@ public class MainActivity extends AppCompatActivity implements OnMascotasRequire
                 startActivity(intent);
             }
         });
-    }
+    }*/
 
-    private void setMascotasData() {
+    /*private void setMascotasData() {
         mascotas.add(new Mascota("Perro", 5, R.drawable.perro));
         mascotas.add(new Mascota("Perro Dos", 7, R.drawable.perro2));
         mascotas.add(new Mascota("Perro Tres", 3, R.drawable.perro3));
         mascotas.add(new Mascota("Perro Cuatro", 9, R.drawable.perro4));
         mascotas.add(new Mascota("Perro De Agua", 2, R.drawable.perrodeagua));
         mascotas.add(new Mascota("Gato", 5, R.drawable.gato1));
-    }
+    }*/
 
     private List<Fragment> agregarFragments(){
         List<Fragment> fragments = new ArrayList <>();
@@ -174,22 +167,15 @@ public class MainActivity extends AppCompatActivity implements OnMascotasRequire
 
     }
 
-    @Override
-    public List<Mascota> onMascotasRequired() {
-        return mascotas;
-    }
-
-    @Override
-    public void onMascotaIsRated(int position) {
-        mascotas.get(position).setNumeroLikes(mascotas.get(position).getNumeroLikes()+1);
-        recyclerViewFragment.onRecyclerViewReload(mascotas);
-    }
 
 
 
 
 
-   /* public List<Mascota> getMascotas() {
+
+
+
+   /* public List<Mascota> getAllMascotas() {
         return mascotas;
     }*/
 }

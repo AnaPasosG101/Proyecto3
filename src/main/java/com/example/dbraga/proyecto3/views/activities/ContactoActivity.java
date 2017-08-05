@@ -1,4 +1,4 @@
-package com.example.dbraga.proyecto3.activities;
+package com.example.dbraga.proyecto3.views.activities;
 
 import android.os.StrictMode;
 import android.support.design.widget.TextInputEditText;

@@ -11,12 +11,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dbraga.proyecto3.activities.MainActivity;
+
+import com.example.dbraga.proyecto3.views.activities.MainActivity;
 import com.example.dbraga.proyecto3.R;
-import com.example.dbraga.proyecto3.fragments.PerfilFragment;
-import com.example.dbraga.proyecto3.fragments.RecyclerViewFragment;
-import com.example.dbraga.proyecto3.listeners.OnMascotaIsRatedListener;
-import com.example.dbraga.proyecto3.listeners.OnMascotasRequiredListener;
+import com.example.dbraga.proyecto3.views.fragments.PerfilFragment;
+import com.example.dbraga.proyecto3.views.fragments.RecyclerViewFragment;
 import com.example.dbraga.proyecto3.pojo.Mascota;
 
 import java.util.List;
@@ -54,7 +53,7 @@ public class MascotaRecyclerViewAdapter extends RecyclerView.Adapter<MascotaRecy
 
     @Override
     public void onBindViewHolder(MascotaReclyclerViewHolder holder,  int position) {
-        Mascota mascota=mascotas.get(position);
+        final Mascota mascota=mascotas.get(position);
         holder.imageViewFotoMascota.setImageResource(mascota.getImageRef());
         if (fragment instanceof RecyclerViewFragment || fragment == null) {
             holder.textViewPetName.setText(mascota.getName());
@@ -71,8 +70,10 @@ public class MascotaRecyclerViewAdapter extends RecyclerView.Adapter<MascotaRecy
                 @Override
                 public void onClick(View v) {
                     Log.d("Dbra", "onclik");
-                    ((MainActivity) activity).onMascotaIsRated(thisPosition);
-
+                    ((RecyclerViewFragment) fragment)
+                            .onMascotaIsRated(mascotas.get(thisPosition));
+                    mascotas.get(thisPosition)
+                            .setNumeroLikes(mascotas.get(thisPosition).getNumeroLikes()+1);
 
                 }
             });

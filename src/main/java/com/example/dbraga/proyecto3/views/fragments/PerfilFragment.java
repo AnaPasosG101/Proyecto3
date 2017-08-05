@@ -1,25 +1,15 @@
-package com.example.dbraga.proyecto3.fragments;
+package com.example.dbraga.proyecto3.views.fragments;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dbraga.proyecto3.R;
-import com.example.dbraga.proyecto3.activities.MainActivity;
 import com.example.dbraga.proyecto3.adapters.MascotaRecyclerViewAdapter;
 import com.example.dbraga.proyecto3.pojo.Mascota;
 
@@ -98,7 +88,7 @@ public class PerfilFragment extends Fragment {
 
 
         for (int i = 0; i < 50; i++) {
-            mascotas.add(new Mascota ("",random.nextInt(30),R.drawable.perrodeagua));
+            mascotas.add(new Mascota (i,"",random.nextInt(30),R.drawable.perrodeagua));
         }
     }
 }
