@@ -45,6 +45,8 @@ public class FavoritesActivityPresenterImpl implements IFavoritesActivityPresent
 
     @Override
     public void presenterFavoritesMascotas(List <Mascota> favoritesMascotas) {
+        iFavoritesActivityViewModel.setToolbar();
+
         iFavoritesActivityViewModel.initRecyclerView();
         iFavoritesActivityViewModel.setRecyclerViewData(favoritesMascotas);
 

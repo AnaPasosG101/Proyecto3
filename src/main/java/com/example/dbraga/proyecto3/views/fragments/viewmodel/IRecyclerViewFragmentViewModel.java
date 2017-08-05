@@ -13,6 +13,8 @@ import java.util.List;
 
 public interface IRecyclerViewFragmentViewModel {
 
+
+
     public void initRecyclerView();
 
     public void setRecyclerViewData(List<Mascota> mascotas);

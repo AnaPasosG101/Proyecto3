@@ -37,6 +37,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String INSERT="INSERT";
     private static final String INTO="INTO";
     private static final String VALUES="VALUES";
+    private static final String ORDER_BY="ORDER BY";
+    private static final String DESC="DESC";
+    private static final String LIMIT="LIMIT";
 
 
 
@@ -139,15 +142,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db=getReadableDatabase();
 
-        Cursor cursor=db.query(
-                DatabaseContract.DatabaseConstants.MASCOTAS_TABLE_NAME,
-                null,
-                null,
-                null,
-                null,
-                DatabaseContract.DatabaseConstants.MASCOTAS_LIKES_SPAN,
-                "5"
-        );
+        String query=SELECT+SPACE+ASTERISCO+SPACE+FROM+SPACE
+                + DatabaseContract.DatabaseConstants.MASCOTAS_TABLE_NAME+SPACE
+                + ORDER_BY+SPACE+ DatabaseContract.DatabaseConstants.MASCOTAS_LIKES_SPAN+SPACE+DESC
+                +SPACE+LIMIT+SPACE+5;
+
+        Cursor cursor=db.rawQuery(query,null);
 
 
         while(cursor.moveToNext()){

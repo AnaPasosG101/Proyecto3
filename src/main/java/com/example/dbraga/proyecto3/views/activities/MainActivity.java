@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.dbraga.proyecto3.R;
 import com.example.dbraga.proyecto3.adapters.MascotasPagerAdapter;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
    // private List<Mascota> mascotas;
 
     private Toolbar toolbar;
-   // private ImageButton favoritosButton;
+    private ImageButton favoritosButton;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private RecyclerViewFragment recyclerViewFragment;
@@ -44,15 +46,13 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.mascotasViewPager);
 
-
-
         setSupportActionBar(toolbar);
 
         //mascotas=new ArrayList<>();
 
         //setMascotasData();
 
-        //setFavorites();
+        setFavorites();
 
         setUpViewPager();
 
@@ -63,6 +63,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    private void setFavorites() {
+        favoritosButton = (ImageButton) findViewById(R.id.toolbarFavoritesButton);
+        favoritosButton.setVisibility(View.VISIBLE);
+        favoritosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(getApplicationContext(), FavoritesActivity.class);
+
+
+                startActivity(intent);
+            }
+        });
+    }
 
 
     @Override

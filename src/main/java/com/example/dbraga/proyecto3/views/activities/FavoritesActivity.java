@@ -37,7 +37,7 @@ public class FavoritesActivity extends AppCompatActivity implements IFavoritesAc
 
     }
 
-
+     @Override
      public void setToolbar(){
        toolbar = (Toolbar) findViewById(R.id.miActionBar);
 

@@ -14,6 +14,11 @@ import java.util.List;
 public interface IFavoritesActivityViewModel {
 
 
+
+    void setToolbar();
+
+
+
     public void initRecyclerView();
 
     public void setRecyclerViewData(List<Mascota> favoritesMascotas);
