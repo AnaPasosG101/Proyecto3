@@ -125,7 +125,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while(cursor.moveToNext()){
             Mascota mascota=new Mascota();
 
-            mascota.setId(cursor.getInt(0));
+            mascota.setIdDB(cursor.getInt(0));
             mascota.setName(cursor.getString(1));
             mascota.setNumeroLikes(cursor.getInt(2));
             mascota.setImageRef(cursor.getInt(3));
@@ -153,7 +153,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while(cursor.moveToNext()){
             Mascota mascota=new Mascota();
 
-            mascota.setId(cursor.getInt(0));
+            mascota.setIdDB(cursor.getInt(0));
             mascota.setName(cursor.getString(1));
             mascota.setNumeroLikes(cursor.getInt(2));
             mascota.setImageRef(cursor.getInt(3));

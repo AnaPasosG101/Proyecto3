@@ -9,9 +9,9 @@ import java.util.List;
  */
 
 public interface IRecyclerViewFragmentPresenter {
-    public void obtainMascotas();
+    void obtainMascotas();
 
-    public void presenterMascotas(List<Mascota> favoritesMascotas );
+    void presenterMascotas(List<Mascota> favoritesMascotas );
 
     void ratingMascota(Mascota mascota);
 

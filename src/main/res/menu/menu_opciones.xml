@@ -9,5 +9,8 @@
         android:title="@string/acerca_menu_opciones"
         android:orderInCategory="10"
         />
+    <item android:id="@+id/configuracion"
+        android:title="@string/configuraci_n"
+        android:orderInCategory="20"/>
 
 </menu>

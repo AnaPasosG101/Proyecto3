@@ -98,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentContacto = new Intent (getApplicationContext(),ContactoActivity.class);
                 startActivity(intentContacto);
                 break;
+            case R.id.configuracion:
+                Intent intentConfiguracion = new Intent (getApplicationContext(),ConfigActivity.class);
+                startActivity(intentConfiguracion);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

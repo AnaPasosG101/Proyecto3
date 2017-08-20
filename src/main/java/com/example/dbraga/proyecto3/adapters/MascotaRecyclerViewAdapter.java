@@ -17,6 +17,7 @@ import com.example.dbraga.proyecto3.R;
 import com.example.dbraga.proyecto3.views.fragments.PerfilFragment;
 import com.example.dbraga.proyecto3.views.fragments.RecyclerViewFragment;
 import com.example.dbraga.proyecto3.pojo.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -54,9 +55,16 @@ public class MascotaRecyclerViewAdapter extends RecyclerView.Adapter<MascotaRecy
     @Override
     public void onBindViewHolder(MascotaReclyclerViewHolder holder,  int position) {
         final Mascota mascota=mascotas.get(position);
-        holder.imageViewFotoMascota.setImageResource(mascota.getImageRef());
+
+
         if (fragment instanceof RecyclerViewFragment || fragment == null) {
+            holder.imageViewFotoMascota.setImageResource(mascota.getImageRef());
             holder.textViewPetName.setText(mascota.getName());
+        } else{
+           // holder.imageViewFotoMascota.setImageResource(mascota.getUrlImage());
+            Picasso.with(activity).load(mascota.getUrlImage())
+                    .placeholder(R.drawable.perro)
+                    .into(holder.imageViewFotoMascota);
         }
         holder.textViewLikes.setText(String.valueOf(mascota.getNumeroLikes()));
 
